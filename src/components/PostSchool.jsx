@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const SchoolList = () => {
+const PostSchool = () => {
   const [schools, setSchools] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,11 +25,11 @@ const SchoolList = () => {
   }, []); // Empty dependency array ensures this effect runs only once on component mount
 
   return (
-    <div className="min-h-screen overflow-y-auto">
+    <div className="min-h-screen py-8 mt-60">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-center mt-60">Schools for +2</h1>
         <div className="overflow-y max-h-screen mt-10">
-          <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
             {schools.length === 0 ? (
               <p className="text-center">No schools found.</p>
             ) : (
@@ -91,14 +91,8 @@ const SchoolList = () => {
           </div>
         </div>
       </div>
-      <style jsx>{`
-                /* Hide scrollbar for Chrome, Safari and Opera */
-                div::-webkit-scrollbar {
-                    display: none;
-                }
-            `}</style>
     </div>
   );
 };
 
-export default SchoolList;
+export default PostSchool;
